@@ -125,61 +125,334 @@
 * !      {----------------- Практика #1 ----------------------------}  
 
 	
-			 Задание на урок:
-		1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
-		'Сколько фильмов вы уже посмотрели?'
-		2) Создать объект personalMovieDB и в него поместить такие свойства:
-         - count - сюда передается ответ на первый вопрос
-         - movies - в это свойство поместить пустой объект
-         - actors - тоже поместить пустой объект
-         - genres - сюда поместить пустой массив
-         - privat - в это свойство поместить boolean(логическое) значение false
-		3) Задайте пользователю по два раза вопросы:
-         - 'Один из последних просмотренных фильмов?'
-         - 'На сколько оцените его?'
-		Ответы стоит поместить в отдельные переменные
-		Записать ответы в объект movies в формате: 
-         movies: {
-            'logan': '8.1'
+* ?			 Задание на урок:
+* ?		1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+* ?		'Сколько фильмов вы уже посмотрели?'
+* ?		2) Создать объект personalMovieDB и в него поместить такие свойства:
+* ?         - count - сюда передается ответ на первый вопрос
+* ?         - movies - в это свойство поместить пустой объект
+* ?         - actors - тоже поместить пустой объект
+* ?         - genres - сюда поместить пустой массив
+* ?         - privat - в это свойство поместить boolean(логическое) значение false
+* ?		3) Задайте пользователю по два раза вопросы:
+* ?         - 'Один из последних просмотренных фильмов?'
+* ?         - 'На сколько оцените его?'
+* ?		Ответы стоит поместить в отдельные переменные
+* ?		Записать ответы в объект movies в формате: 
+* ?         movies: {
+* ?           'logan': '8.1'
+* ?         }
+* ?		Проверить, чтобы все работало без ошибок в консоли 
+* ?
+* ?      let numberOfFilms = prompt("Сколько фильмов вы уже посмотрели", "");
+* ?	
+* ?	let personalMovieDB = {
+* ?		count: numberOfFilms,
+* ?		movies: {},
+* ?		actors: {},
+* ?		genres: [],
+* ?		privat: false
+* ?	};
+* ?	
+* ?	let lastMovie = prompt("Один из последних просмотренных фильмов?", "");
+* ?	let estimateMovie = prompt("На сколько оцените его?", "");
+
+* ?	personalMovieDB.movies[lastMovie] = estimateMovie;
+
+* ?	console.log(personalMovieDB);
+	
+	
+* !      {----------------- Условие ----------------------------}
+		
+			
+			
+* ?			if(num > 101) {
+* ?				console.log('больше');
+* ?			} else if (num < 100) {
+* ?				console.log('меньше');
+* ?			} else {
+* ?				console.log('В точку');
+* ?			}
+			
+* ?			(num == 100) ? console.log("Верно") : console.log("Не верно");
+			
+* ?			let num = 100;
+			
+* ?			switch(num) {
+* ?				case 101:
+* ?					console.log('Больше');
+* ?					break;
+* ?				case 99:
+* ?					console.log('Меньше');
+* ?					break;
+* ?				case 100:
+* ?					console.log('В точку');
+* ?					break;
+* ?				default:
+* ?					console.log('А хуй вам');
+* ?					break;
+* ?			}
+	
+* !      {----------------- Логические операторы --------------------------------}
+	
+* ?		&& - возвращает true, если все учасники операции правдивы
+* ?      || - возвращает true, если хотябы одно значение true
+* ?	
+* ?	   {-------------------------------  && -----------------------------------}
+
+* ?      const hamburger = true;
+* ?      const fries = true;
+* ?
+* ?      if (hamburger && fries) {
+* ?				console.log("Я сыт");
+* ?			}
+* ?		      console.log(hamburger && fries) - вернёт true, потому что два значение верны(hamburger и fries)
+* ?		      
+* ?		{-----------------------------------------------------------------------}
+
+* ?		const hamburger = true;
+* ?      const fries = false;
+* ?
+* ?      if (hamburger && fries) {
+* ?				console.log("Я сыт");
+* ?			}
+* ?		      console.log(hamburger && fries) - вернёт false, потому что есть хотя бы одно ложное значение
+* ?
+* !      NaN, 0, undefined, Null, "" - всегда будут false
+* ?		const hamburger = 2;
+* ?      let cola = 0;
+* ?      const fries = 1;   
+* ?   
+* ?		console.log(hamburger === 3 && cola && fries) - вернёт значение cola (0),
+* ?		                                            потому что оператор && выводит первое ложное значение 
+* ?			
+* ?		console.log(1 && 0) - вернёт 0
+* ?		console.log(1 && 5) - вернёт 5
+* ?		console.log(null && 5) - вернёт null
+* ?		console.log(0 && 'random string') - вернёт 0
+* ?			
+* ?      if (hamburger === 3 && fries === 1) {
+* ?            console.log('Все сыты');
+* ?		    } else {
+* ?			   console.log('Мы уходим');
+* ?			 }
+* ?	  {-------------------------------  || -------------------------------------}
+
+* ?		const hamburger = 3;
+* ?      const cola = 0;
+* ?      const fries = 3;
+* ?		const nuggets = 2;
+
+* ?      if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
+* ?            console.log('Все довольно');
+* ?		    } else {
+* ?			   console.log('Мы уходим');
+* ?			 }
+* ?
+				
+* ?			let johnReport,
+* ?				 alexreport,
+* ?			    samReport,
+* ?				 mariaReport = 'done';
+
+* ?				 console.log(johnReport || alexreport || samReport || mariaReport); - вернёт значение(mariareport),
+* ?				                           потому что || проверяет все значение, если не нашло верное значение,
+* ?													вернёт последнее ложное
+* ?			
+* ?			
+* !      {----------------- Циклы --------------------------------}
+
+* *     1ий вариант:
+
+* ?      let num = 50;
+
+* ?      while (num <= 55) {
+* ?				console.log(num);
+* ?				num++;
+* ?			}
+
+* *     2ой вариант:
+
+* ?      do {
+* ?			   console.log(num)
+* ?			   num++;
+* ?			}
+
+* ?      while (num < 55);
+
+* *     3ой вариант:
+
+* ?      for(let i = 1; i < 10; i++) {
+* ?			if(i === 6) {
+* ?					break; - прерывает цикл на значение(6) 
+* ?					continue; - удалят значение(6), и идет дальше
+* ?			   }
+* ?				console.log(i);
+* ?			}
+
+
+
+* ?			 for (let i = 0; i < 3; i++) {
+* ?				 console.log(i);
+* ?				 for (let j = 0; j < 3; j++) {
+* ?					console.log(j);
+* ?				}
+* ?			 }
+			 
+* *     Задача по вложенности циклов:
+
+* ?		let result = "";
+* ?		let length = 7;
+		
+* ?		for(let i = 1; i < length; i++) {
+* ?			for(let j = 0; j < i; j++) {
+* ?				result += '*';
+* ?			}
+* ?			result += "\n";
+* ?		}
+* ?		console.log(result);
+
+
+* ?			first: for (let i = 0; i < 3; i++) {
+* ?				 console.log(`First level: ${i}`);
+* ?			 for (let j = 0; j < 3; j++) {
+* ?				  console.log(`Second level: ${j}`);
+* ?                 for (let k = 0; k < 3; k++) {
+* ?								if(k === 2) continue first;
+* ?				        console.log(`Third level: ${k}`);
+* ?				  }
+* ?				}
+* ?			 }
+* ?			 
+* ?		
+* ?	for(let i = 20; i >= 10; i--) {
+* ?		if(i === 13) break;
+* ?		console.log(i);
+* ?	}
+* ?
+* ?	for (let i = 2; i <=16; i++) {
+* ?		if(i % 2 === 0) {
+* ?			continue;
+* ?		} else {
+* ?			console.log(i)
+* ?		}
+* ?	}
+	
+* ?	let i = 2
+	
+* ?	while (i <= 16) {
+* ?		if(i % 2 === 0) {
+* ?			i++;
+* ?			continue;
+* ?		} else {
+* ?			console.log(i)
+* ?		}
+* ?		i++;
+* ?	}
+	
+* ?	const arrayOfNumbers = [];
+
+* ?	for (let i = 10; i < 21; i++) {
+* ?		 arrayOfNumbers[i - 10] = i;
+* ?	}
+* ?	console.log(arrayOfNumbers);
+* ?	return arrayOfNumbers;
+	
+
+'use strict';
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+for(let i = 0; i < 2; i++) {
+	const a = prompt('Один из последних просмотренных фильмов?', ''),
+         b = prompt('На сколько оцените его?', '');
+         
+         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log('done');
+         } else {
+            console.log('error');
+            i--;
          }
-		Проверить, чтобы все работало без ошибок в консоли 
-
-	let numberOfFilms = prompt("Сколько фильмов вы уже посмотрели", "");
+      
+      
+}
 	
-	let personalMovieDB = {
-		count: numberOfFilms,
-		movies: {},
-		actors: {},
-		genres: [],
-		privat: false
-	};
+	if(personalMovieDB.count < 10) {
+		console.log('Просмотрено довольно мало фильмов');
+	} else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+		console.log('Вы классический зритель');
+	}  else if(personalMovieDB.count >= 30) {
+		console.log('Вы киноман');
+	} else {
+		console.log('Произошла ошибка');
+	}
 	
-	let lastMovie = prompt("Один из последних просмотренных фильмов?", "");
-	let estimateMovie = prompt("На сколько оцените его?", "");
+		console.log(personalMovieDB);
+
+*/
+
+
+// 'use strict';
+
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+
+
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
+
+// for(let i = 0; i < 2; i++) {
+// 	   const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
+        
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//            personalMovieDB.movies[a] = b;
+//            console.log('done');
+//         } else {
+//            console.log('error');
+//            i--;
+//         }
+// }
+//       let i = 0;
+      
+//       while(i < 2) {
+//          const a = prompt('Один из последних просмотренных фильмов?', ''),
+//                b = prompt('На сколько оцените его?', '');
+               
+//       if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('done');
+//        } else {
+//            console.log('error');
+//             i--;
+//          }
+         
+//       }
+      
+// 	if(personalMovieDB.count < 10) {
+// 		console.log('Просмотрено довольно мало фильмов');
+// 	} else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+// 		console.log('Вы классический зритель');
+// 	}  else if(personalMovieDB.count >= 30) {
+// 		console.log('Вы киноман');
+// 	} else {
+// 		console.log('Произошла ошибка');
+// 	}
 	
-	personalMovieDB.movies[lastMovie] = estimateMovie;
-
-	console.log(personalMovieDB);
-	
-	*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 		console.log(personalMovieDB);
